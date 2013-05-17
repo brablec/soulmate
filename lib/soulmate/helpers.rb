@@ -14,7 +14,7 @@ module Soulmate
 
     def normalize(str)
       # Letter, Mark, Number, Connector_Punctuation (Chinese, Japanese, etc.)
-      str.downcase.gsub(/[^\p{Word}\ ]/i, '').strip
+      str.mb_chars.downcase.to_s.gsub(/[^\p{Word}\ ]/i, '').strip
     end
 
   end
